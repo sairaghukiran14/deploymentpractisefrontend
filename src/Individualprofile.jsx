@@ -14,7 +14,7 @@ const Individualprofile = ({ match }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:1414/myreview", {
+      .get("https://deploymentbackend-u0xo.onrender.com//myreview", {
         headers: {
           "x-token": localStorage.getItem("token"),
         },
@@ -24,11 +24,14 @@ const Individualprofile = ({ match }) => {
 
   const onsubmitHandler = async () => {
     if (localStorage && localStorage.getItem("token")) {
-      const profileData = await axios.get("http://localhost:1414/myprofile", {
-        headers: {
-          "x-token": localStorage.getItem("token"),
-        },
-      });
+      const profileData = await axios.get(
+        "https://deploymentbackend-u0xo.onrender.com//myprofile",
+        {
+          headers: {
+            "x-token": localStorage.getItem("token"),
+          },
+        }
+      );
 
       setTaskprovider(profileData.data.fullname);
     }

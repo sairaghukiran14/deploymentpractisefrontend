@@ -9,7 +9,7 @@ const Dashboard = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:1414/allprofiles", {
+      .get("https://deploymentbackend-u0xo.onrender.com/allprofiles", {
         headers: {
           "x-token": localStorage.getItem("token"),
         },

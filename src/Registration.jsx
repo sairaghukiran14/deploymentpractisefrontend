@@ -25,9 +25,11 @@ const Registration = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:1414/register", data).then((res) => {
-      alert(res.data);
-    });
+    axios
+      .post("https://deploymentbackend-u0xo.onrender.com/register", data)
+      .then((res) => {
+        alert(res.data);
+      });
   };
 
   return (

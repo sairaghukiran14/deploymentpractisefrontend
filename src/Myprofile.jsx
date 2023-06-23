@@ -9,14 +9,14 @@ const Myprofile = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:1414/myprofile", {
+      .get("https://deploymentbackend-u0xo.onrender.com/myprofile", {
         headers: {
           "x-token": localStorage.getItem("token"),
         },
       })
       .then((res) => setData(res.data));
     axios
-      .get("http://localhost:1414/myreview", {
+      .get("https://deploymentbackend-u0xo.onrender.com/myreview", {
         headers: {
           "x-token": localStorage.getItem("token"),
         },

@@ -21,10 +21,12 @@ const Login = () => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:1414/login", data).then((res) => {
-      localStorage.setItem("token", res.data.token);
-      setAuth(true);
-    });
+    axios
+      .post("https://deploymentbackend-u0xo.onrender.com/login", data)
+      .then((res) => {
+        localStorage.setItem("token", res.data.token);
+        setAuth(true);
+      });
   };
   if (auth) {
     return <Navigate to="/dashboard" />;
